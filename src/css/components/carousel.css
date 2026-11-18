@@ -61,10 +61,21 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   border: 1px solid #ccc;
   /* Bordure arrondie pour faire un cercle - https://developer.mozilla.org/fr/docs/Web/CSS/border-radius */
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour bien voir la flèche par-dessus l'image */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 .carousel__button--prev {
+  left: 16px;
   /* Fait pivoter le bouton de 180 degrés - https://developer.mozilla.org/fr/docs/Web/CSS/transform */
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.carousel__button--next {
+  right: 16px;
 }
 
 .carousel__container {
@@ -116,4 +127,7 @@ carousel__anchors {
   border-radius: 50%;
   text-decoration: none;
   color: inherit;
+}
+.carousel {
+  position: relative;
 }
